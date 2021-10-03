@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
+    <style>
+        .map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+        #map {
+            height: 400px;
+            /* The height is 400 pixels */
+            width: 100%;
+            /* The width is the width of the web page */
+          }
+    </style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Solid Template</title>
+    <title>વડવાળી જગ્યા</title>
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 	<script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <link rel="icon" type="image/png" href="favicon-32x32.png"/>
 </head>
 <body class="is-boxed has-animations">
     <div class="body-wrap">
@@ -31,8 +53,8 @@
                 <div class="container">
                     <div class="hero-inner">
 						<div class="hero-copy">
-	                        <h1 class="hero-title mt-0">Landing template for startups</h1>
-	                        <p class="hero-paragraph">Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever.</p>
+	                        <h1 class="hero-title mt-0">ખીમદાસ બાપુ ચેતન્ય સમાધિ (મોવૈયા).</h1>
+	                        <p class="hero-paragraph">ખીમદાસ બાપુ ચેતન્ય સમાધિ મોવૈયા.</p>
 	                        <div class="hero-cta"><a class="button button-primary" href="#">Pre order now</a><a class="button" href="#">Get in touch</a></div>
 						</div>
 						<div class="hero-figure anime-element">
@@ -159,12 +181,12 @@
 
 			<section class="cta section">
 				<div class="container">
-					<div class="cta-inner section-inner">
-						<h3 class="section-title mt-0">Still not convinced on buying?</h3>
-						<div class="cta-cta">
-							<a class="button button-primary button-wide-mobile" href="#">Get in touch</a>
-						</div>
-					</div>
+                    <div class="map-responsive">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231.3459276333254!2d70.84706231003227!3d21.913981028475675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395840e8ad204b23%3A0x79086b74a2ce221a!2sChetanya%20Samadhi%20Khimdas%20bapu%20(vadvali%20jagya)!5e0!3m2!1sen!2sin!4v1633247293097!5m2!1sen!2sin" allowfullscreen></iframe>
+                    </div>
+					<!-- <div class="cta-inner section-inner">
+                     
+					</div> -->
 				</div>
 			</section>
         </main>
@@ -179,16 +201,10 @@
                     </div>
                     <ul class="footer-links list-reset">
                         <li>
-                            <a href="#">Contact</a>
+                            <a href="#">Made by Nirav Gondaliya </a>
                         </li>
                         <li>
-                            <a href="#">About us</a>
-                        </li>
-                        <li>
-                            <a href="#">FAQ's</a>
-                        </li>
-                        <li>
-                            <a href="#">Support</a>
+                            <a href="#">(+91)6354010189</a>
                         </li>
                     </ul>
                     <ul class="footer-social-links list-reset">
@@ -217,12 +233,28 @@
                             </a>
                         </li>
                     </ul>
-                    <div class="footer-copyright">&copy; 2019 Solid, all rights reserved</div>
+                    <div class="footer-copyright">&copy; 2021 Solid, all rights reserved</div>
                 </div>
             </div>
         </footer>
     </div>
 
     <script src="main.min.js"></script>
+    <script>
+        function initMap() {
+        // The location of Uluru
+            const uluru = { lat: 21.9139043, lng: 70.8449134 };
+            // The map, centered at Uluru
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 4,
+                center: uluru,
+            });
+            // The marker, positioned at Uluru
+            const marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+            });
+        }
+    </script>
 </body>
 </html>
